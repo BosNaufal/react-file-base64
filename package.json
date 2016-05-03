@@ -2,7 +2,7 @@
   "name": "react-file-base64",
   "version": "1.0.0",
   "description": "React Component for Converting File to base64",
-  "main": "./src/js/components/react-file-base64.vue",
+  "main": "./src/js/components/react-file-base64.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build": "webpack -p"
