@@ -45,7 +45,8 @@ class FileBase64 extends React.Component {
           name: file.name,
           type: file.type,
           size: Math.round(file.size / 1000)+' kB',
-          base64: reader.result
+          base64: reader.result,
+          file: file
         }
 
         // Push it to the state

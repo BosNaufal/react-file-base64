@@ -19,7 +19,7 @@ npm install react-file-base64
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FileBase64 from 'react-file-base64.js';
+import FileBase64 from 'react-file-base64';
 
 class App extends React.Component {
 
