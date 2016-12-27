@@ -55,7 +55,8 @@ class FileBase64 extends React.Component {
         // If all files have been proceed
         if(allFiles.length == files.length){
           // Apply Callback function
-          this.props.onDone(allFiles)
+          if(this.props.multiple) this.props.onDone(allFiles)
+          else this.props.onDone(allFiles[0])
         }
 
       } // reader.onload
