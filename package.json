@@ -1,6 +1,6 @@
 {
   "name": "react-file-base64",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Component for Converting File to base64",
   "main": "./src/js/components/react-file-base64.js",
   "scripts": {
