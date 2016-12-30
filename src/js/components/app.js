@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 
 import FileBase64 from './react-file-base64.js';
 
-require('../../sass/main.sass')
-
 class App extends React.Component {
 
   constructor() {
