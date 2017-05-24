@@ -10,12 +10,12 @@ import ReactDOM from 'react-dom';
 
 class FileBase64 extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       files: []
     }
-    this.props = {
+    props = {
       multiple: false
     }
   }
