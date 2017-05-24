@@ -52,8 +52,8 @@ class FileBase64 extends React.Component {
         // Push it to the state
         allFiles.push(fileInfo)
 
-        // If all files have been proceed
-        if(allFiles.length == files.length){
+        // If all files have been processed
+        if(allFiles.length === files.length){
           // Apply Callback function
           if(this.props.multiple) this.props.onDone(allFiles)
           else this.props.onDone(allFiles[0])
