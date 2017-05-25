@@ -1,34 +1,30 @@
 
 var webpack = require('webpack');
-require('es6-promise').polyfill();
+const minify = process.argv.indexOf('--minify') !== -1;
 
 module.exports = {
 
-  entry: './src/js/components/app.js',
+  entry: './src/js/components/react-file-base64.js',
 
   output: {
     path: './build',
-    filename: 'build.js'
+    filename: minify ? 'build.min.js' : 'build.js',
+    libraryTarget: 'umd'
   },
-
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel'
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+        },
       },
       {
         test: /\.css$/,
         loaders: ['style','css']
       }
     ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': '"production"'
-      }
-    })
-  ]
-
+  }
 };

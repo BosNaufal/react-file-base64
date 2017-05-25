@@ -6,36 +6,32 @@
 */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class FileBase64 extends React.Component {
+export default class FileBase64 extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-      files: []
-    }
-    this.props = {
-      multiple: false
-    }
+      files: [],
+    };
   }
 
-  handleChange(e){
+  handleChange(e) {
 
     // get the files
     let files = e.target.files;
 
     // Process each file
-    var allFiles = []
+    var allFiles = [];
     for (var i = 0; i < files.length; i++) {
 
-      let file = files[i]
+      let file = files[i];
 
       // Make new FileReader
-      let reader = new FileReader()
+      let reader = new FileReader();
 
       // Convert the file to base64 text
-      reader.readAsDataURL(file)
+      reader.readAsDataURL(file);
 
       // on reader load somthing...
       reader.onload = () => {
@@ -44,19 +40,19 @@ class FileBase64 extends React.Component {
         let fileInfo = {
           name: file.name,
           type: file.type,
-          size: Math.round(file.size / 1000)+' kB',
+          size: Math.round(file.size / 1000) + ' kB',
           base64: reader.result,
-          file: file
-        }
+          file: file,
+        };
 
         // Push it to the state
-        allFiles.push(fileInfo)
+        allFiles.push(fileInfo);
 
         // If all files have been proceed
         if(allFiles.length == files.length){
           // Apply Callback function
-          if(this.props.multiple) this.props.onDone(allFiles)
-          else this.props.onDone(allFiles[0])
+          if(this.props.multiple) this.props.onDone(allFiles);
+          else this.props.onDone(allFiles[0]);
         }
 
       } // reader.onload
@@ -65,15 +61,16 @@ class FileBase64 extends React.Component {
 
   }
 
-  render(){
+  render() {
     return (
       <input
         type="file"
         onChange={ this.handleChange.bind(this) }
         multiple={ this.props.multiple } />
-    )
+    );
   }
-
 }
 
-export default FileBase64;
+FileBase64.defaultProps = {
+  multiple: false,
+};
