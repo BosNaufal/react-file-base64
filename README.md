@@ -3,13 +3,16 @@
 
 [DEMO](https://rawgit.com/BosNaufal/react-file-base64/master/index.html)
 
+## Important
+This package is a fork from [Naufal Rabbani](https://github.com/BosNaufal/react-file-base64)'s original package. It seems like he's not maintaining it, and hence, this package was created instead so that other users could use it, as it seems the feature is highly requested. All credit for the core and base logic goes to him. All I did was correctly fix the code so that it would work correctly when importing as per noted in issue [here](https://github.com/BosNaufal/react-file-base64/issues/1).
+
 
 ## Install
 You can import [react-file-base64.js](./src/js/components/react-file-base64.js) to your react component file like [this](./src/js/components/app.js) and process it with your preprocessor.
 
 You can install it via NPM
 ```bash
-npm install react-file-base64
+npm install react-filebase64
 ```
 
 
@@ -19,7 +22,7 @@ npm install react-file-base64
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FileBase64 from 'react-file-base64';
+import FileBase64 from 'react-filebase64';
 
 class App extends React.Component {
 
