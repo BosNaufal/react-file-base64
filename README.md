@@ -55,10 +55,10 @@ ReactDOM.render(<App />, document.getElementById("app"))
 
 ## Props
 ##### multiple (Boolean)
-Is your component support multiple file?
+Does your component support multiple files?
 
 ##### onDone (Function)
-Callback Function When all files have been proceed
+Callback function when all files have been processed
 
 
 ## Thank You for Making this useful~
