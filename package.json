@@ -2,7 +2,7 @@
   "name": "react-filebase64",
   "version": "1.0.1",
   "description": "React Component for Converting File to base64",
-  "main": "build/build.min.js",
+  "main": "build/build.js",
   "scripts": {
     "dev": "webpack --config webpack.config.dev.js && webpack-dev-server --inline --hot",
     "build": "webpack && webpack -p --minify",
@@ -47,5 +47,8 @@
   },
   "peerDependencies": {
     "react": "^15.0.2"
+  },
+  "dependencies": {
+    "react": "^15.6.1"
   }
 }
