@@ -63,10 +63,14 @@ export default class FileBase64 extends React.Component {
 
   render() {
     return (
-      <input
-        type="file"
-        onChange={ this.handleChange.bind(this) }
-        multiple={ this.props.multiple } />
+      <div className="wrap-input-file">
+        <input
+          id="input-base64"
+          type="file"
+          onChange={ this.handleChange.bind(this) }
+          multiple={ this.props.multiple } />
+        <label htmlFor="input-base64">Thêm ảnh</label>
+      </div>
     );
   }
 }
