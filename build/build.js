@@ -144,6 +144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      console.log(this.props);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'wrap-input-file' },
@@ -155,7 +156,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _react2.default.createElement(
 	          'label',
 	          { htmlFor: 'input-base64' },
-	          'Th\xEAm \u1EA3nh'
+	          this.props.textLabel
 	        )
 	      );
 	    }
