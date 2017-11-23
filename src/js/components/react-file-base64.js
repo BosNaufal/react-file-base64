@@ -50,9 +50,12 @@ export default class FileBase64 extends React.Component {
 
         // If all files have been proceed
         if(allFiles.length == files.length){
+          // Use params props
+          let params = this.props.params;
+
           // Apply Callback function
-          if(this.props.multiple) this.props.onDone(allFiles);
-          else this.props.onDone(allFiles[0]);
+          if(this.props.multiple) this.props.onDone(allFiles, params);
+          else this.props.onDone(allFiles[0], params);
         }
 
       } // reader.onload
