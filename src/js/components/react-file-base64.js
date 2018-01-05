@@ -62,7 +62,6 @@ export default class FileBase64 extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="wrap-input-file">
         <input
