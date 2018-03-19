@@ -8,15 +8,8 @@
 import React from 'react';
 
 export default class FileBase64 extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      files: [],
-    };
-  }
-
   handleChange(e) {
+    const { multiple, onDone } = this.props;
 
     // get the files
     let files = e.target.files;
@@ -49,10 +42,10 @@ export default class FileBase64 extends React.Component {
         allFiles.push(fileInfo);
 
         // If all files have been proceed
-        if(allFiles.length == files.length){
+        if (allFiles.length == files.length) {
           // Apply Callback function
-          if(this.props.multiple) this.props.onDone(allFiles);
-          else this.props.onDone(allFiles[0]);
+          if (multiple) onDone(allFiles);
+          else onDone(allFiles[0]);
         }
 
       } // reader.onload
@@ -62,11 +55,16 @@ export default class FileBase64 extends React.Component {
   }
 
   render() {
+    const { multiple, className } = this.props
     return (
       <input
         type="file"
-        onChange={ this.handleChange.bind(this) }
-        multiple={ this.props.multiple } />
+        onChange={this.handleChange.bind(this)}
+        multiple={multiple}
+        className={className}
+        // Accept addational props e.g. style 
+        {...this.props}
+      />
     );
   }
 }
