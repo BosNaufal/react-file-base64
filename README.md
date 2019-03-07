@@ -54,6 +54,9 @@ ReactDOM.render(<App />, document.getElementById("app"))
 ##### multiple (Boolean)
 Does your component support multiple files?
 
+##### accept (String)
+accept attribute to be passed on to the underlying `input` component, e.g. `image/jpeg`
+
 ##### onDone (Function)
 Callback function when all files have been processed
 
