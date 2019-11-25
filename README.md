@@ -54,6 +54,10 @@ ReactDOM.render(<App />, document.getElementById("app"))
 ##### multiple (Boolean)
 Does your component support multiple files?
 
+##### disabled (Boolean)
+disabled attribute to be passed on to the underlying `input` component
+
+
 ##### onDone (Function)
 Callback function when all files have been processed
 
