@@ -54,6 +54,33 @@ ReactDOM.render(<App />, document.getElementById("app"))
 ##### multiple (Boolean)
 Does your component support multiple files?
 
+##### resetFlag (Boolean) (option)
+Description: reset the `FileBase` component state. 
+
+Update the `resetFlag` to `!resetFlag` can tigger the reset function.
+
+Usage: Update the `resetFlag` variable in `FileBase64` parent component and pass `resetFlag` to `FileBase64` component as a props
+
+Your parent component shoud like this:
+```jsx
+// add state in parent component
+const [resetFlag, setResetFlag] = useState(false);
+
+// add reset function in parent component
+// call this function if you want reset the FileBase component
+const reset = () => {
+  setResetFlag(!resetFlag);
+}
+
+// send the resetFlag props to FileBase component
+return (
+  <div >
+    <FileBase resetFlag={resetFlag} onDone={uploadFile} /> 
+  </div>
+)
+
+```
+
 ##### onDone (Function)
 Callback function when all files have been processed
 
