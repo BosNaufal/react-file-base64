@@ -11,9 +11,16 @@ export default class FileBase64 extends React.Component {
 
   constructor(props) {
     super(props);
+    this.formRef = React.createRef();
     this.state = {
       files: [],
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.resetFlag !== prevProps.resetFlag && this.formRef.current) {
+      this.formRef.current.reset();
+    }
   }
 
   handleChange(e) {
@@ -49,7 +56,7 @@ export default class FileBase64 extends React.Component {
         allFiles.push(fileInfo);
 
         // If all files have been proceed
-        if(allFiles.length == files.length){
+        if(allFiles.length === files.length){
           // Apply Callback function
           if(this.props.multiple) this.props.onDone(allFiles);
           else this.props.onDone(allFiles[0]);
@@ -63,10 +70,13 @@ export default class FileBase64 extends React.Component {
 
   render() {
     return (
-      <input
-        type="file"
-        onChange={ this.handleChange.bind(this) }
-        multiple={ this.props.multiple } />
+      <form ref={this.formRef}>
+        <input
+          type="file"
+          onChange={ this.handleChange.bind(this) }
+          multiple={ this.props.multiple }
+        />
+      </form>
     );
   }
 }
